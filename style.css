@@ -1,0 +1,106 @@
+body{
+    background-image: url('IMG/1.png');
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display:flex;/* Огонь и металл*/
+    background-size: cover;/* Фон растягивается, чтобы заполнить экран */
+    background-position: center;
+    background-repeat: no-repeat; /* Отключаем повторение */
+}
+
+
+.container1, .container2 {
+    padding: 220px 200px 220px 220px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Чёрная рамка с 50% прозрачностью */
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.TEXT{
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.INP{
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Фон кнопки */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    margin-top: 35px;
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 20px;
+    padding: 10px 40px;
+    font-size: 20px;
+    color: black;
+    overflow: hidden; /* Чтобы псевдоэлементы не выходили за границы */
+    transition: transform 0.3s ease; /* Плавное увеличение кнопки */
+    -webkit-font-smoothing: antialiased; /* Сглаживание текста */
+    will-change: transform; /* Ускорение анимации */
+}
+
+button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Рамка */
+    border-radius: inherit; /* Наследуем скругления углов */
+    pointer-events: none; /* Отключаем взаимодействие */
+    transition: transform 0.3s ease; /* Рамка двигается плавно */
+    z-index: 1; /* Рамка всегда поверх фона */
+}
+
+button:hover {
+    transform: scale(1.2); /* Увеличиваем кнопку */
+}
+
+button:hover::before {
+    transform: scale(0.833); /* Компенсируем увеличение рамки */
+}
+
+button span { 
+    position: relative;
+    z-index: 2;
+} 
+
+a{
+    color: black;
+    Text-decoration: none
+}
+
+.Z{
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 50px;
+}
+
+
+/* Анимации для сывпв */
+#login-form, #register-form {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+}
